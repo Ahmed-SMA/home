@@ -1,0 +1,86 @@
+/* Base Styles */
+:root{
+  --bg:#0e0f11;
+  --panel:#121316;
+  --text:#f3f4f6;
+  --muted:#a0a4ad;
+  --accent:#ff1e3e;
+  --card:#17181c;
+  --line:#23252b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial}
+a{color:var(--text);text-decoration:none}
+.container{width:min(1100px,90%);margin:0 auto}
+.section{padding:80px 0}
+h1,h2,h3{line-height:1.1;margin:0 0 12px}
+h1{font-family:'Orbitron',sans-serif;font-weight:700;font-size:48px;letter-spacing:.5px}
+h2{font-size:28px}
+h3{font-size:20px}
+p{color:var(--muted);line-height:1.7;margin:0 0 12px}
+ul{padding-left:18px}
+
+/* Header */
+.site-header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(6px);background:rgba(14,15,17,.6);border-bottom:1px solid var(--line);z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{font-family:'Orbitron',sans-serif;font-weight:700;letter-spacing:1px}
+.logo span{color:var(--accent)}
+.nav nav{display:flex;gap:18px;align-items:center}
+.nav .btn{margin-left:8px}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none}
+.hamburger span{width:24px;height:2px;background:var(--text)}
+
+/* Buttons */
+.btn{display:inline-block;padding:12px 18px;border-radius:12px;border:1px solid var(--line);transition:.2s ease-in-out;cursor:pointer}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:white;border-color:transparent}
+.btn-ghost{background:transparent}
+
+/* Hero */
+.hero{padding:80px 0;background:
+radial-gradient(600px 300px at 85% -10%, rgba(255,30,62,0.15), transparent 60%),
+linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0));
+}
+.hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
+.hero h1 .muted{font-weight:600;color:var(--muted);font-size:20px;display:block;margin-bottom:8px}
+.hero .cta-row{display:flex;gap:12px;margin:16px 0 10px}
+.quick{display:flex;gap:12px;list-style:none;padding:0;margin:10px 0;color:var(--muted)}
+.hero-art{position:relative;min-height:320px}
+.card.stat{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.card.stat .big{font-family:'Orbitron',sans-serif;font-size:44px;font-weight:700}
+.card.stat .caption{color:var(--muted);font-size:12px;margin-top:4px}
+.card.stat:nth-child(1){top:20px;right:20px}
+.card.stat:nth-child(2){bottom:20px;left:10px}
+.orb{position:absolute;inset:auto 60px 40px auto;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(255,30,62,.6), rgba(255,30,62,.15) 40%, transparent 65%);filter:blur(2px)}
+
+/* About */
+.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+.about-cards{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}
+.chip{background:var(--card);color:var(--text);border:1px solid var(--line);padding:10px 14px;border-radius:999px;font-size:13px}
+
+/* Work */
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:14px}
+.work-card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .2s ease, box-shadow .2s ease}
+.work-card:hover{transform:translateY(-4px);box-shadow:0 10px 50px rgba(0,0,0,.35)}
+.work-card img{width:100%;height:220px;object-fit:cover;background:#0b0c0f}
+.work-body{padding:16px}
+.tags{display:flex;gap:8px;list-style:none;padding:0;margin:8px 0 0}
+.tags li{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:6px 10px;border-radius:999px}
+
+/* Experience */
+.timeline{display:grid;gap:18px;margin-top:10px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.item .meta{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}
+
+/* Contact */
+.contact .contact-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
+.tiny{color:var(--muted);font-size:12px;margin-top:16px}
+
+/* Responsive */
+@media (max-width: 920px){
+  .hero-inner{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+  .work-grid{grid-template-columns:1fr}
+  .nav nav{display:none}
+  .hamburger{display:flex}
+}
